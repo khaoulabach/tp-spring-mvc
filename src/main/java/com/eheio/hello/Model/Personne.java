@@ -33,4 +33,71 @@ public class Personne
     )
     private List<Mesure> Listmesure = new ArrayList<Mesure>();
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setObeservation(String obeservation) {
+        this.obeservation = obeservation;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setConsultationList(List<Consultation> consultationList) {
+        this.consultationList = consultationList;
+    }
+
+    public void setListmesure(List<Mesure> listmesure) {
+        Listmesure = listmesure;
+    }
+
+    public Integer getId() {
+
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getObeservation() {
+        return obeservation;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public List<Consultation> getConsultationList() {
+        return consultationList;
+    }
+
+    public List<Mesure> getListmesure() {
+        return Listmesure;
+    }
+
+
+
 }

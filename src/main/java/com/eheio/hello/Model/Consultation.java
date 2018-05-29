@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="consultation")
 public class Consultation {
-	@Id 
+	@Id
 	@Column(name="id")
 	@GeneratedValue  
 	private Integer id; 
@@ -28,6 +28,51 @@ public class Consultation {
 			joinColumns=@JoinColumn(name="id_maladie", referencedColumnName="id"),
 			inverseJoinColumns=@JoinColumn(name="id_consultation", referencedColumnName="id"))
 	private List<Maladie> maladieList;
+	public Integer getId() {
+		return id;
+	}
 
+	public String getObeservation() {
+		return obeservation;
+	}
 
+	public Date getDate() {
+		return date;
+	}
+
+	public Personne getM() {
+		return m;
+	}
+
+	public Personne getP() {
+		return p;
+	}
+
+	public List<Maladie> getMaladieList() {
+		return maladieList;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setObeservation(String obeservation) {
+		this.obeservation = obeservation;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
+
+	public void setM(Personne m) {
+		this.m = m;
+	}
+
+	public void setP(Personne p) {
+		this.p = p;
+	}
+
+	public void setMaladieList(List<Maladie> maladieList) {
+		this.maladieList = maladieList;
+	}
 }

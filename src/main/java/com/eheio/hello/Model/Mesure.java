@@ -17,4 +17,36 @@ public class Mesure {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_maladie")
     private Personne p;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public Personne getM() {
+        return m;
+    }
+
+    public Personne getP() {
+        return p;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setM(Personne m) {
+        this.m = m;
+    }
+
+    public void setP(Personne p) {
+        this.p = p;
+    }
 }
