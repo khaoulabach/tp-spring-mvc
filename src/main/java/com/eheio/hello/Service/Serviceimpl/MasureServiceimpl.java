@@ -9,8 +9,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 public class MasureServiceimpl implements MesureService {
-    @Autowired
+
      private MesureDao  mesureDao;
+    @Autowired
     public void setMesureDao(MesureDao mesureDao) {
         this.mesureDao=mesureDao;
     }

@@ -6,8 +6,6 @@
 
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    
-
     <!-- Scans within the base package of the application for @Component classes to configure as beans -->
     <context:component-scan base-package="com.eheio.hello.*"/>
 
@@ -31,6 +29,19 @@
 			</props>
 		</property>
 		<property name="packagesToScan" value="com.eheio.hello.Model"/>
+	</bean >
+	<bean id="personneDao" class="com.eheio.hello.Dao.Daoimpl.PersonneDaoimpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="personneService" class="com.eheio.hello.Service.Serviceimpl.PersonneServiceimpl">
+		<property name="personneDao" ref="personneDao"></property>
+	</bean>
+
+	<bean id="personne" class="com.eheio.hello.Model.Personne"></bean>
+
+	<bean id="personneController" class="com.eheio.hello.web.HelloController">
+		<property name="personne" ref="personne"></property>
+		<property name="personneServiceimpl" ref="personneService"></property>
 	</bean>
 
 </beans>

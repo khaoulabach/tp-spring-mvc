@@ -8,10 +8,12 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+@Repository
 public class PersonneDaoimpl implements PersonneDao {
+
     private SessionFactory sessionFactory;
 
     @Autowired
@@ -37,8 +39,8 @@ public class PersonneDaoimpl implements PersonneDao {
         } catch (HibernateException e) {
             session = sessionFactory.openSession();
         }
-        Query qry = session.createQuery("from Personne ");
-        return qry.list();
+        org.hibernate.query.Query<Personne> query = session.createQuery("from Personne");
+        return query.getResultList();
     }
     public List<Personne> getPersonneWithMaldie(){
         Session session;

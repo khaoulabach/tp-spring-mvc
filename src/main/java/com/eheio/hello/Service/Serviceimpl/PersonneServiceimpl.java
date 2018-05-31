@@ -9,8 +9,9 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 public class PersonneServiceimpl implements PerssoneService {
-    @Autowired
+
      private  PersonneDao  personneDao;
+    @Autowired
     public void setPersonneDao(PersonneDao personneDao) {
         this.personneDao=personneDao;
     }

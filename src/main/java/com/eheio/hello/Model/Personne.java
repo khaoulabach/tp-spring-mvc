@@ -19,7 +19,7 @@ public class Personne
     @Column(name="login")
     private String login;
     @Column(name="passwrd")
-    private String obeservation;
+    private String passwrd;
     @Column(name="role")
     private String role;
     @OneToMany(
@@ -48,9 +48,8 @@ public class Personne
     public void setLogin(String login) {
         this.login = login;
     }
-
-    public void setObeservation(String obeservation) {
-        this.obeservation = obeservation;
+    public void setPasswrd(String passwrd) {
+        this.passwrd = passwrd;
     }
 
     public void setRole(String role) {
@@ -82,8 +81,8 @@ public class Personne
         return login;
     }
 
-    public String getObeservation() {
-        return obeservation;
+    public String getPasswrd() {
+        return passwrd;
     }
 
     public String getRole() {
