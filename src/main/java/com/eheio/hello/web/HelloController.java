@@ -68,6 +68,7 @@ public class HelloController {
             m.addObject("list", list);
 
         }
+
         for (Maladie maladie : maladieServiceimpl.getMaldie())
         {
             listm.add(maladie);
