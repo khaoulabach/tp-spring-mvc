@@ -4,13 +4,18 @@ import com.eheio.hello.Dao.MaldieDao;
 import com.eheio.hello.Model.Maladie;
 import com.eheio.hello.Service.MaldieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
 public class MaladieServiceimpl implements MaldieService {
-    @Autowired
+
+
     private MaldieDao maladieDao;
+    @Autowired
+    @Qualifier("maldieDao")
     public void setMaladieDao(MaldieDao maladieDao) {
      this.maladieDao=maladieDao;
     }
@@ -36,8 +41,8 @@ public class MaladieServiceimpl implements MaldieService {
     }
 
     @Transactional
-    public List<Maladie> getMaldieWithMesure() {
-        return maladieDao.getMaldieWithMesure();
+    public List<Maladie> getPerssoneWithMaldie() {
+        return maladieDao.getPerssoneWithMaldie();
     }
 
     @Transactional

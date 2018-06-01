@@ -12,7 +12,7 @@ public interface MaldieDao {
     public void removeMaldie(int id);
     public Maladie getMaldie(int id);
     public List<Maladie> getMaldie();
-    public List<Maladie> getMaldieWithMesure();
+    public List<Maladie> getPerssoneWithMaldie();
     public List<Maladie> getMaldieWithConsultation();
 
 }

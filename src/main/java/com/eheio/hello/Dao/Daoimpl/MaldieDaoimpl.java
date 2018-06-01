@@ -39,14 +39,14 @@ public class MaldieDaoimpl implements  MaldieDao {
         Query qry = session.createQuery("from Maladie ");
         return qry.list();
     }
-    public List<Maladie> getMaldieWithMesure(){
+    public List<Maladie> getPerssoneWithMaldie(){
         Session session;
         try {
             session = sessionFactory.getCurrentSession();
         } catch (HibernateException e) {
             session = sessionFactory.openSession();
         }
-        return session.createNativeQuery("select m.nom,ms.nom from Maladie m inner join Mesure ms on m.id=ms.id_maladie  ").list();
+        return session.createNativeQuery("select m.nom from maladie m inner join con_maldie cm on m.id=cm.id_maladie inner join consultation c on c.id=cm.id_consultation inner join personne p on c.id_medcin = p.id  ").list();
     }
     public List<Maladie> getMaldieWithConsultation()
     {

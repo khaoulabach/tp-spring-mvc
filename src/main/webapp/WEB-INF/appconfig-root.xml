@@ -44,4 +44,18 @@
 		<property name="personneServiceimpl" ref="personneService"></property>
 	</bean>
 
+	<bean id="maldieDao" class="com.eheio.hello.Dao.Daoimpl.MaldieDaoimpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="maladieService" class="com.eheio.hello.Service.Serviceimpl.MaladieServiceimpl">
+		<property name="maladieDao" ref="maldieDao"></property>
+	</bean>
+
+	<bean id="maladie" class="com.eheio.hello.Model.Maladie"></bean>
+
+	<bean id="maladieController" class="com.eheio.hello.web.HelloController">
+		<property name="maladie" ref="maladie"></property>
+		<property name="maladieServiceimpl" ref="maladieService"></property>
+	</bean>
+
 </beans>

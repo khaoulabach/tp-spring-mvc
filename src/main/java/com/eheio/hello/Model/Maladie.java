@@ -75,4 +75,11 @@ public class Maladie {
     public void setConsultationList(List<Consultation> consultationList) {
         this.consultationList = consultationList;
     }
+
+    @Override
+    public String toString() {
+        return "Maladie{" +
+                "nom='" + nom + '\'' +
+                '}';
+    }
 }

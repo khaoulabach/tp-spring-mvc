@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Homme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {background-color:#f5f5f5;}
+    </style>
 </head>
 <body>
-<p th:text="'Hello'+${user}+ '!'"></p>
-Homme
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+        <a  class="w3-bar-item w3-button" >Cabinet Medical </a>
+        <!-- Float links to the right. Hide them on small screens -->
+        <div class="w3-right w3-hide-small">
+            <a  class="w3-bar-item w3-button" th:text="'Hello'+${user}+ '!'" ></a>
+            <a  class="w3-bar-item w3-button"th:text="${role}"></a>
+
+        </div>
+    </div>
+</div>
+<div>
+<h2>Liste des Patient </h2>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>maladie</th>
+    </tr>
+    <tr th:each="t : ${list}" >
+        <td th:text="|${t.nom}"  ></td>
+         <td th:text="|${t.prenom}" ></td>
+        <td ><span th:each="m:${listm}"  th:text="|${m.nom}"></span></td>
+
+    </tr>
+</table>
+</div>
 </body>
 </html>

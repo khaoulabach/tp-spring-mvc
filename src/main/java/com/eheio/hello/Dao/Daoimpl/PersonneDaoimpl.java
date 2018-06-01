@@ -43,12 +43,14 @@ public class PersonneDaoimpl implements PersonneDao {
         return query.getResultList();
     }
     public List<Personne> getPersonneWithMaldie(){
+
         Session session;
         try {
             session = sessionFactory.getCurrentSession();
         } catch (HibernateException e) {
             session = sessionFactory.openSession();
         }
-        return session.createNativeQuery("select  p.nom ,p.prenom ,ml.nom from Personne p  inner join Mesure m on m.id_personne =p.id inner join Maladie ml on m.id_maladie=ml.id ").list();
+        return session.createNativeQuery("select p.nom ,p.prenom from Personne p ").list();
+
     }
 }
