@@ -10,8 +10,8 @@ public class Personne
 {
     @Id
     @Column(name="id")
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
     @Column(name="nom")
     private String nom;
     @Column(name="prenom")

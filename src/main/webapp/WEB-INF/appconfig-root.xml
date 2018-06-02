@@ -43,6 +43,10 @@
 		<property name="personne" ref="personne"></property>
 		<property name="personneServiceimpl" ref="personneService"></property>
 	</bean>
+	<bean id="personneControllerr" class="com.eheio.hello.web.RegisterController">
+		<property name="personne" ref="personne"></property>
+		<property name="personneServiceimpl" ref="personneService"></property>
+	</bean>
 
 	<bean id="maldieDao" class="com.eheio.hello.Dao.Daoimpl.MaldieDaoimpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>

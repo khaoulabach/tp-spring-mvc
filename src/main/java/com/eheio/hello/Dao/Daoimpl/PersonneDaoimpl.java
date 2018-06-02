@@ -22,7 +22,14 @@ public class PersonneDaoimpl implements PersonneDao {
     }
     public void addPersonne(Personne personne)
     {
-        this.sessionFactory.getCurrentSession().save(personne);
+        Session session;
+        try {
+            session = sessionFactory.getCurrentSession();
+        } catch (HibernateException e) {
+            session = sessionFactory.openSession();
+        }
+
+        session.save(personne);
     }
     public void removePersonne(int id){
         this.sessionFactory.getCurrentSession().delete(getPersonne(id));
@@ -42,6 +49,7 @@ public class PersonneDaoimpl implements PersonneDao {
         org.hibernate.query.Query<Personne> query = session.createQuery("from Personne");
         return query.getResultList();
     }
+
     public List<Personne> getPersonneWithMaldie(){
 
         Session session;

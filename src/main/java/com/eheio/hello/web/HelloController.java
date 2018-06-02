@@ -41,6 +41,7 @@ public class HelloController {
     public String hello() {
         return "hello";
     }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView hello(@RequestParam(value="username") String username,
                               @RequestParam(value="password") String password , Model model) {
