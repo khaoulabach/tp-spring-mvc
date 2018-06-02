@@ -30,9 +30,10 @@
         </div>
     </div>
 </div>
-<div>
-<h2>Liste des Patient </h2>
-<table>
+
+<div th:if="${role == 'medcin'}">
+<h2 style="margin-top: 100px">Liste des Patient </h2>
+<table >
     <tr>
         <th>First Name</th>
         <th>Last Name</th>
@@ -46,5 +47,22 @@
     </tr>
 </table>
 </div>
+<div th:if="${role == 'patient'}" style="margin-top: 100px">
+    <table >
+        <tr>
+            <th>Observation</th>
+            <th>date</th>
+            <th>medcin</th>
+
+        </tr>
+        <tr th:each="tc : ${listc}">
+            <td th:text="|${tc.obeservation}"  ></td>
+            <td th:text="|${tc.date}" ></td>
+            <td ><span th:text="|${nom}"   ></span></td>
+        </tr>
+    </table>
+</div>
+
+
 </body>
 </html>

@@ -62,4 +62,18 @@
 		<property name="maladieServiceimpl" ref="maladieService"></property>
 	</bean>
 
+
+	<bean id="consultationDao" class="com.eheio.hello.Dao.Daoimpl.ConsultationDaoimpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="consultationService" class="com.eheio.hello.Service.Serviceimpl.ConsultationServiceimpl">
+		<property name="consultationDao" ref="consultationDao"></property>
+	</bean>
+
+	<bean id="consultation" class="com.eheio.hello.Model.Consultation"></bean>
+
+	<bean id="consultationController" class="com.eheio.hello.web.HelloController">
+		<property name="consultation" ref="consultation"></property>
+		<property name="consultationServiceimpl" ref="consultationService"></property>
+	</bean>
 </beans>
